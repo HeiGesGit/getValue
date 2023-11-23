@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input
+        id="input"
+        style="width: 200px; height: 200px"
+        type="text"
+        placeholder="请输入"
+      />
+      <button onclick="getValue()" style="width: 200px; height: 200px">
+        获取值
+      </button>
+      <div style="font-size: 30px" id="value"></div>
+    </div>
+    <script>
+      function name([a, b, c]) {
+        return [100 / a, 100 / b, 100 / c];
+      }
+
+      function getValue() {
+        // 1 2 3
+        const vals = document.getElementById("input").value;
+        const res = name(vals.split(" "));
+        let newres = res.map((item) => item.toFixed(2)).join('    ');
+        document.getElementById("value").innerText = newres;
+      }
+    </script>
+  </body>
+</html>
